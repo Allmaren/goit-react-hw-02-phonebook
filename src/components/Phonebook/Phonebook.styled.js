@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 400px 400px;
+  justify-content: center;
   gap: 30px;
 `;
 
@@ -13,9 +13,7 @@ export const Block = styled.div`
   background-color: red;
 `;
 
-export const FormGroup = styled.div`
-  display: grid;
-  grid-template-columns: 50px 1fr;
-  gap: 15px;
-  margin-bottom: 15px;
+export const NoContacts = styled.p`
+  color: green;
+  font-size: 20px;
 `;
