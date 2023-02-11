@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import { BlockFilter, Input, Label } from './contactFilter.js';
 
-const Filter = ({ handleChange }) => {
+const Filter = ({ inputValue }) => {
   return (
     <BlockFilter>
       <Label>Find contact by name</Label>
-      <Input onChange={handleChange} placeholder="Filter name" name="filter" />
+      <Input onChange={inputValue} placeholder="Filter name" name="filter" />
     </BlockFilter>
   );
 };
@@ -13,5 +13,5 @@ const Filter = ({ handleChange }) => {
 export default Filter;
 
 Filter.propTypes = {
-  handleChange: PropTypes.func,
+  inputValue: PropTypes.func.isRequired,
 };

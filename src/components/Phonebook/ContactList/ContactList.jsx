@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { List, Button } from './contactList.styled.js';
+import { List, Button, Ol } from './contactList.styled.js';
 
 const ContactList = ({ removeContact, items }) => {
   const contact = items.map(({ id, name, number }) => (
@@ -11,7 +11,7 @@ const ContactList = ({ removeContact, items }) => {
     </List>
   ));
 
-  return <ol>{contact}</ol>;
+  return <Ol>{contact}</Ol>;
 };
 
 export default ContactList;

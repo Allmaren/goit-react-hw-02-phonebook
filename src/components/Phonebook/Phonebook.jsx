@@ -4,7 +4,13 @@ import { nanoid } from 'nanoid';
 import ContactList from './ContactList/ContactList.jsx';
 import Filter from './ContactFilter/ContactFilter.jsx';
 import ContactForm from './Form/ContactForm.jsx';
-import { Wrapper, Block, NoContacts } from './Phonebook.styled.js';
+import {
+  Wrapper,
+  Block,
+  NoContacts,
+  TitleContact,
+  Title,
+} from './Phonebook.styled.js';
 export class Phonebook extends Component {
   state = {
     contacts: [],
@@ -59,25 +65,26 @@ export class Phonebook extends Component {
     return result;
   }
 
+  handleFilter = e => {
+    this.setState({ filter: e.target.value });
+  };
+
   render() {
-    const { addContact, handleChange, removeContact } = this;
+    const { addContact, removeContact } = this;
     const items = this.getFilteredContacts();
-    const isContacts = Boolean(items.length);
 
     return (
       <>
         <Wrapper>
           <Block>
-            <h1>Phonebook</h1>
+            <Title>Phonebook</Title>
             <ContactForm onSubmit={addContact} />
           </Block>
           <Block>
-            <h2>Contacts</h2>
-            <Filter handleChange={handleChange} />
-            {isContacts && (
-              <ContactList removeContact={removeContact} items={items} />
-            )}
-            {!isContacts && <NoContacts>No contacts in phonebooks</NoContacts>}
+            <TitleContact>Contacts</TitleContact>
+            <Filter inputValue={this.handleFilter} />
+            <ContactList removeContact={removeContact} items={items} />
+            <NoContacts>No contacts in phonebooks</NoContacts>
           </Block>
         </Wrapper>
       </>
