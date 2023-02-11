@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   display: grid;
   justify-content: center;
   gap: 30px;
+  margin-top: 30px;
 `;
 
 export const Block = styled.div`

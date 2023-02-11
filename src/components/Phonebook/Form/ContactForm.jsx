@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 
-import { FormGroup } from './contactForm.styled.js';
+import { FormGroup, Input, Label, Button } from './contactForm.styled.js';
 
 class ContactForm extends Component {
   state = {
@@ -33,8 +33,8 @@ class ContactForm extends Component {
     return (
       <form onSubmit={handleSubmit}>
         <FormGroup>
-          <label>Name</label>
-          <input
+          <Label>Name</Label>
+          <Input
             onChange={handleChange}
             placeholder="Name"
             type="text"
@@ -46,8 +46,8 @@ class ContactForm extends Component {
           />
         </FormGroup>
         <FormGroup>
-          <label>Number</label>
-          <input
+          <Label>Number</Label>
+          <Input
             onChange={handleChange}
             placeholder="Number"
             type="tel"
@@ -58,7 +58,7 @@ class ContactForm extends Component {
             required
           />
         </FormGroup>
-        <button type="submit">Add contact </button>
+        <Button type="submit">Add contact </Button>
       </form>
     );
   }

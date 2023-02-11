@@ -6,3 +6,7 @@ export const FormGroup = styled.div`
   gap: 15px;
   margin-bottom: 15px;
 `;
+
+export const Input = styled.input``;
+export const Label = styled.label``;
+export const Button = styled.button``;

@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
-import { List } from './contactList.styled.js';
+import { List, Button } from './contactList.styled.js';
 
 const ContactList = ({ removeContact, items }) => {
   const contact = items.map(({ id, name, number }) => (
-    <li key={id}>
+    <List key={id}>
       {name}: {number}
-      <button onClick={() => removeContact(id)} type="button">
+      <Button onClick={() => removeContact(id)} type="button">
         Delete
-      </button>
-    </li>
+      </Button>
+    </List>
   ));
 
   return <ol>{contact}</ol>;
